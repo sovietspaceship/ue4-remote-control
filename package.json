@@ -1,0 +1,32 @@
+{
+  "name": "ue4-remote-control",
+  "version": "1.0.0",
+  "description": "Control the Unreal Editor via HTTP with Node",
+  "main": "out/index.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "tslint -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/sovietspaceship/ue4-remote-control.git"
+  },
+  "keywords": [
+    "unreal-engine"
+  ],
+  "author": "Rei <stellameravigliosa.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/sovietspaceship/ue4-remote-control/issues"
+  },
+  "homepage": "https://gitlab.com/sovietspaceship/ue4-remote-control#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "@types/request-promise": "^4.1.45",
+    "bluebird": "^3.7.2",
+    "request-promise": "^4.2.5"
+  }
+}
