@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Control the Unreal Editor via HTTP with Node",
   "main": "out/index.js",
+  "types": "out/index.d.ts",
   "scripts": {
     "compile": "tsc -p ./",
     "lint": "tslint -p ./",
