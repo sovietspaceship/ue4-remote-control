@@ -7,14 +7,18 @@
   "scripts": {
     "compile": "tsc -p ./",
     "lint": "tslint -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/sovietspaceship/ue4-remote-control.git"
   },
   "keywords": [
-    "unreal-engine"
+    "unreal-engine",
+    "ue4",
+    "unreal-engine-4",
+    "game-development"
   ],
   "author": "Rei <stellameravigliosa.io>",
   "license": "MIT",
@@ -27,13 +31,18 @@
   },
   "dependencies": {
     "bluebird": "^3.7.2",
+    "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
   "devDependencies": {
-    "@types/node": "^10.14.17",
+    "@types/chai": "^4.2.9",
     "@types/lodash": "^4.14.145",
-    "typescript": "^3.5.1",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^10.14.17",
     "@types/request-promise": "^4.1.45",
-    "tslint": "^5.16.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "tslint": "^5.16.0",
+    "typescript": "^3.5.1"
   }
 }

@@ -1,6 +1,6 @@
 import { Resource } from '../api/resource'
 
-export type ObjectPath = string
+import { ObjectPath } from '../engine/types'
 
 import {
     RemoteObjectCall,
@@ -28,17 +28,18 @@ export class UObject extends Resource {
         }
         return this.getProperty(property)
     }
-    async load() {
+    async loadAll() {
         this.properties = await this.remoteObjectProperty({
             access: "READ_ACCESS",
             objectPath: this.objectPath
         }) as UnknownObject
     }
-    async call(method: string, parameters?: UnknownObject) {
+    async call(method: string, parameters?: UnknownObject, generateTransaction?: boolean) {
         return this.remoteObjectCall({
             objectPath: this.objectPath,
             functionName: method,
-            parameters
+            parameters,
+            generateTransaction,
         })
     }
     async getProperty(property: string) {
@@ -50,13 +51,17 @@ export class UObject extends Resource {
         this.properties[property] = value
         return value
     }
-
-    async setProperty(property: string, value: UnknownValue) {
+    async setProperty(property: string, value: UnknownValue): Promise<UnknownValue> {
         await this.remoteObjectProperty({
             access: "WRITE_ACCESS",
             propertyName: property,
             propertyValue: value
         })
         this.properties[property] = value
+        return value
     }
+}
+
+export function buildObjectPath(path: string, objects: { name: string, subobject: string }[]) {
+    return objects.reduce((path, object) => `${path}:${object.name}.${object.subobject}`, `${path}/`)
 }
