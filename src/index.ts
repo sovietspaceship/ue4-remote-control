@@ -1,5 +1,5 @@
 import { UObject } from './objects/uobject'
-import { AActor } from './objects/actor;
+import { AActor } from './objects/actor';
 import { EditorLevelLibrary } from './objects/editor-level-library'
 import { Resource, HttpMethodCalls } from './api/resource'
 
@@ -10,6 +10,7 @@ export default {
     Schema,
     EngineTypes,
     UObject,
+    AActor,
     EditorLevelLibrary,
     Resource,
     makeRequest
