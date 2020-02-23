@@ -23,7 +23,7 @@ Currently supported are:
 
 To create a new object type, extend UObject. See src/objects for more examples.
 
-```ts
+```typescript
 import { AActor } from 'ue4-remote-control/objects/actor'
 
 type PetCatRequest = {
@@ -41,7 +41,7 @@ export class AHuman extends AActor {
 
 then, to use the new method
 
-```ts
+```typescript
 const human = new AHuman('/Game/CatGame:Level.Level:Human.CatPetter')
 const cat = new ACat('/Game/CatGame:Level.Level:Cat.Nyasu')
 
@@ -53,12 +53,12 @@ If you create some useful engine object classes, please submit a merge request!
 # Examples
 
 * Getting all actors in the currently open level:
-```ts
+```typescript
 import { EditorLevelLibrary } from 'objects/editor-level-library'
 const ell = new EditorLevelLibrary()
 const actors = await ell.getAllLevelActors()
 /*
-    actors = 
+    actors = [
         '/Game/Project/Level.Level:PersistentLevel.Actor1',
         '/Game/Project/Level.Level:PersistentLevel.Actor2'
     ]
@@ -66,7 +66,7 @@ const actors = await ell.getAllLevelActors()
 ```
 
 * Getting and setting actor location
-```ts
+```typescript
 const actor = new AActor('/Game/Project/Level.Level:PersistentLevel.Actor1')
 const location = await actor.GetActorLocation()
 // location = { X: 0, Y: 482, Z: 0 }
@@ -85,7 +85,7 @@ const result = await actor.SetActorLocation({ X: 420, Y: 90, Z: 123 })
 ```
 
 * Managing actor properties:
-```ts
+```typescript
 const actor = new AActor('/Game/Project/Level.Level:PersistentLevel.Actor1')
 const properties = await actor.loadAll()
 const property = await actor.get('propertyName')
@@ -98,7 +98,7 @@ Properties are cached when first retrieved. To reload, call `loadAll` or pass `t
 
 If you don't need the whole object architecture, you can use `makeRequest`, defined in `src/index.ts`:
 
-```ts
+```typescript
 import { makeRequest } from 'eu4-remote-control'
 
 // makeRequest(method: HttpMethodCalls, endpoint: string, body: Object)

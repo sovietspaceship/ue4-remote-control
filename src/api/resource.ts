@@ -2,7 +2,7 @@ import * as rp from 'request-promise'
 
 const UE4_SERVER_PORT = 8080
 
-export type HttpMethodCalls = 'put'
+export type HttpMethodCalls = 'put' | 'PUT'
 
 export class Resource {
     async makeRequest<Req, Res>(method: HttpMethodCalls, endpoint: string, body: Req) {
