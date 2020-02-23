@@ -22,8 +22,8 @@ export class UObject extends Resource {
     async remoteObjectProperty(properties: RemoteObjectProperty) {
         return this.makeRequest<RemoteObjectProperty, RemoteObjectPropertyResponse>('put', '/remote/object/property', properties)
     }
-    async get(property: string) {
-        if (this.properties.hasOwnProperty(property)) {
+    async get(property: string, reload?: boolean) {
+        if (!reload && this.properties.hasOwnProperty(property)) {
             return this.properties[property]
         }
         return this.getProperty(property)

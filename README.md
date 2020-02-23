@@ -92,6 +92,8 @@ const property = await actor.get('propertyName')
 await actor.set('propertyName', 100)
 ```
 
+Properties are cached when first retrieved. To reload, call `loadAll` or pass `true` as second argument to `get`.
+
 # Simplified request api
 
 If you don't need the whole object architecture, you can use `makeRequest`, defined in `src/index.ts`:
