@@ -33,7 +33,7 @@ type PetCatRequest = {
 
 export class AHuman extends AActor {
     async petCat(cat: ACat, duration: number): Promise<boolean> {
-        const { returnValue } = await this.call('PetCat', { cat, duration } as PetCatRequest)
+        const { returnValue } = await this.call('PetCat', { cat: cat.objectPath, duration } as PetCatRequest)
         return returnValue as boolean
     }
 }
