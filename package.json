@@ -25,8 +25,14 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@types/request-promise": "^4.1.45",
     "bluebird": "^3.7.2",
     "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^10.14.17",
+    "@types/lodash": "^4.14.145",
+    "typescript": "^3.5.1",
+    "@types/request-promise": "^4.1.45",
+    "tslint": "^5.16.0"
   }
 }
