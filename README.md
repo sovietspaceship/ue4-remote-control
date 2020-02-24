@@ -22,7 +22,7 @@ Currently supported are:
     - getAllLevelActors
 
 To create a new object type, extend UObject. See src/objects for more examples.
-Blueprint libraries are referenced by their default object, e.g. '/Script/EditorScriptingUtilities.Default__EditorLevelLibrary`.
+Blueprint libraries are referenced by their default object, e.g. `/Script/EditorScriptingUtilities.Default__EditorLevelLibrary`.
 
 ```typescript
 import { AActor } from 'ue4-remote-control/objects/actor'
