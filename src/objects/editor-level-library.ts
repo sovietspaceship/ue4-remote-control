@@ -9,4 +9,7 @@ export class EditorLevelLibrary extends UObject {
         const { ReturnValue } = await this.call('GetAllLevelActors') as UnknownObject
         return ReturnValue as string[]
     }
+    async selectNothing(): Promise<void> {
+        await this.call('SelectNothing')
+    }
 }

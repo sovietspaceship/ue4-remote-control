@@ -1,4 +1,3 @@
-const { EditorLevelLibrary } = require('../out/objects/editor-level-library')
 const { RemoteControlLibrary } = require('../out/objects/remote-control-library')
 
 const { expect } = require('chai')

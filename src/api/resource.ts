@@ -6,6 +6,10 @@ export type HttpMethodCalls = 'put' | 'PUT'
 
 import { omitBy, isUndefined } from 'lodash'
 
+import * as debug from 'debug'
+
+const d = debug('ue4-remote-control:Resource')
+
 export class Resource {
     async makeRequest<Req, Res>(method: HttpMethodCalls, endpoint: string, body: Req): Promise<Res> {
         const options: rp.Options = {
@@ -14,6 +18,9 @@ export class Resource {
             body: omitBy(body, isUndefined),
             json: true
         };
-        return await rp(options) as Res
+        d('>> request', options)
+        const result = await rp(options) as Res
+        d('<< result', result)
+        return result
     }
 }
