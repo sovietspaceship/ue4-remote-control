@@ -7,7 +7,7 @@
     "compile": "tsc -p ./",
     "lint": "tslint -p ./",
     "watch": "tsc -watch -p ./",
-    "test": "mocha test/test.js"
+    "test": "mocha --recursive test/"
   },
   "repository": {
     "type": "git",

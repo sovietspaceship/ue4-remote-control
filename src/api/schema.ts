@@ -17,7 +17,9 @@ export type RemoteObjectCall = RemoteObject & {
     generateTransaction?: boolean
 }
 
-export type RemoteObjectCallResponse = UnknownObject
+export type RemoteObjectCallResponse = UnknownValue
+
+export type ReturnValue<T> = { ReturnValue: T }
 
 // PUT /remote/object/property
 
