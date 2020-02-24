@@ -126,8 +126,5 @@ const response = await makeRequest('put', '/remote/object/call', {
     * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html)
     * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html)
     * [UEditorStaticMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorStaticMeshLibrary/index.html)
-    * [EEditorScriptingFilterType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EEditorScriptingFilterType/index.html)
-    * [EEditorScriptingStringMatchType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EEditorScriptingStringMatchType/index.html)
-    * [EScriptingCollisionShapeType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EScriptingCollisionShapeType/index.html)
 
 * [UE4RemoteControlLibrary](https://github.com/sovietspaceship/UE4RemoteControlLibrary)
