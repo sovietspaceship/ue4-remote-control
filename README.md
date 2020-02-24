@@ -9,7 +9,7 @@ __Important: The feature is currently in Beta in the engine, so it may require u
 The client is written in TypeScript and provides an object interface emulating UE4's object intefaces, and some
 type definition for engine data structures.
 
-# Objects
+## Objects
 
 Classes can extend UObject to emulate their interface in the engine code. This is not necessary
 to interact with the engine, but ensures all requests are typechecked by TypeScript.
@@ -22,6 +22,7 @@ Currently supported are:
     - getAllLevelActors
 
 To create a new object type, extend UObject. See src/objects for more examples.
+Blueprint libraries are referenced by their default object, e.g. '/Script/EditorScriptingUtilities.Default__EditorLevelLibrary`.
 
 ```typescript
 import { AActor } from 'ue4-remote-control/objects/actor'
@@ -50,7 +51,7 @@ const catIsHappy: boolean = await human.petCat(cat, 15120)
 
 If you create some useful engine object classes, please submit a merge request!
 
-# Examples
+## Examples
 
 * Getting all actors in the currently open level:
 ```typescript
@@ -94,7 +95,7 @@ await actor.set('propertyName', 100)
 
 Properties are cached when first retrieved. To reload, call `loadAll` or pass `true` as second argument to `get`.
 
-# Simplified request api
+## Simplified request api
 
 If you don't need the whole object architecture, you can use `makeRequest`, defined in `src/index.ts`:
 
@@ -111,3 +112,22 @@ const response = await makeRequest('put', '/remote/object/call', {
     },
 })
 ```
+
+## Server-side libraries
+
+* [EditorScripting](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/index.html)
+    * [FEditorScriptingCreateProxyMeshActorOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingCreateProxyMeshA-/index.html)
+    * [FEditorScriptingJoinStaticMeshActorsOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingJoinStaticMeshAc-/index.html)
+    * [FEditorScriptingMergeStaticMeshActorsOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMergeStaticMeshA-/index.html)
+    * [FEditorScriptingMeshReductionOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMeshReductionOpt-/index.html)
+    * [FEditorScriptingMeshReductionSettings](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMeshReductionSet-/index.html)
+    * [UEditorAssetLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorAssetLibrary/index.html)
+    * [UEditorFilterLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorFilterLibrary/index.html)
+    * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html)
+    * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html)
+    * [UEditorStaticMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorStaticMeshLibrary/index.html)
+    * [EEditorScriptingFilterType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EEditorScriptingFilterType/index.html)
+    * [EEditorScriptingStringMatchType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EEditorScriptingStringMatchType/index.html)
+    * [EScriptingCollisionShapeType](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/EScriptingCollisionShapeType/index.html)
+
+* [UE4RemoteControlLibrary](https://github.com/sovietspaceship/UE4RemoteControlLibrary)
