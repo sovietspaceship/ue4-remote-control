@@ -30,3 +30,21 @@ export type FHitResult = {
     BoneName: FName,
     MyBoneName: FName
 }
+
+export type FEditorScriptingCreateProxyMeshActorOptions = {
+
+}
+
+export type FEditorScriptingJoinStaticMeshActorsOptions = {
+
+}
+
+export type FEditorScriptingMergeStaticMeshActorsOptions = {
+
+}
+
+export type FRotator = {
+    Pitch: number,
+    Roll: number,
+    Yaw: number
+}

@@ -1,4 +1,4 @@
-import { EditorLevelLibrary } from '../objects/editor-level-library'
+import { EditorLevelLibrary } from '../classes/libraries/editor-level-library'
 
 import * as Bluebird from 'bluebird'
 
@@ -13,7 +13,7 @@ export async function waitServer(delay = 1000, timeout = 0) {
 
     while (wait) {
         try {
-            await ell.selectNothing()
+            await ell.SelectNothing()
             return true
         } catch (error) {
             await Bluebird.delay(delay)

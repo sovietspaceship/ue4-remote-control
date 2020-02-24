@@ -1,23 +1,23 @@
-const { EditorLevelLibrary } = require('../out/objects/editor-level-library')
-const { AActor } = require('../out/objects/actor')
+const { EditorLevelLibrary } = require('../out/classes/libraries/editor-level-library')
+const { AActor } = require('../out/classes/actors/actor')
 
 const { expect } = require('chai')
 
 describe('AActor', () => {
     it('should query actor location from an actor reference', async () => {
         const ell = new EditorLevelLibrary()
-        const [someActor] = await ell.getAllLevelActors()
+        const [someActor] = await ell.GetAllLevelActors()
         const actor = new AActor(someActor)
-        const actorLocation = await actor.getActorLocation()
+        const actorLocation = await actor.GetActorLocation()
         expect(actorLocation).to.exist;
     })
     it('should set an actor location from an actor reference', async () => {
         const ell = new EditorLevelLibrary()
-        const [someActor] = await ell.getAllLevelActors()
+        const [someActor] = await ell.GetAllLevelActors()
         const actor = new AActor(someActor)
         const newLoc = { X: 1, Y: 10, Z: 100 }
-        await actor.setActorLocation(newLoc)
-        const actorLocation = await actor.getActorLocation()
+        await actor.SetActorLocation(newLoc)
+        const actorLocation = await actor.GetActorLocation()
         expect(actorLocation).to.deep.equal(newLoc)
         expect(actorLocation).to.exist;
     })

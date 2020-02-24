@@ -1,6 +1,6 @@
-import { UObject } from './objects/uobject'
-import { AActor } from './objects/actor';
-import { EditorLevelLibrary } from './objects/editor-level-library'
+import { UObject } from './classes/uobject'
+import { AActor } from './classes/actors/actor';
+import { EditorLevelLibrary } from './classes/libraries/editor-level-library'
 import { Resource, HttpMethodCalls } from './api/resource'
 
 import * as Schema from './api/schema'

@@ -1,7 +1,7 @@
-import { UObject } from './uobject'
+import { UObject } from '../uobject'
 
-import { FVector, FHitResult } from '../engine/types'
-import { UnknownObject } from '../api/schema'
+import { FVector, FHitResult } from '../../engine/types'
+import { UnknownObject } from '../../api/schema'
 
 type SetActorLocationParams = {
     newLocation: FVector,
@@ -14,13 +14,13 @@ type SetActorLocationResult = {
 }
 
 export class AActor extends UObject {
-    async setActorLocation(newLocation: FVector, bSweep?: boolean): Promise<SetActorLocationResult> {
+    async SetActorLocation(newLocation: FVector, bSweep?: boolean): Promise<SetActorLocationResult> {
         return await this.call('SetActorLocation', {
             newLocation,
             bSweep,
         } as SetActorLocationParams) as SetActorLocationResult
     }
-    async getActorLocation(): Promise<FVector> {
+    async GetActorLocation(): Promise<FVector> {
         const { ReturnValue } = await this.call('GetActorLocation') as UnknownObject
         return ReturnValue as FVector
     }
