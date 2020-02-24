@@ -1,6 +1,7 @@
 import { UObject } from './uobject'
 
 import { FVector, FHitResult } from '../engine/types'
+import { UnknownObject } from '../api/schema'
 
 type SetActorLocationParams = {
     newLocation: FVector,
@@ -20,7 +21,7 @@ export class AActor extends UObject {
         } as SetActorLocationParams) as SetActorLocationResult
     }
     async getActorLocation(): Promise<FVector> {
-        const { ReturnValue } = await this.call('GetActorLocation')
+        const { ReturnValue } = await this.call('GetActorLocation') as UnknownObject
         return ReturnValue as FVector
     }
 }

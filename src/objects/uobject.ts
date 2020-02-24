@@ -35,12 +35,22 @@ export class UObject extends Resource {
         }) as UnknownObject
     }
     async call(method: string, parameters?: UnknownObject, generateTransaction?: boolean) {
-        return this.remoteObjectCall({
+        const options = {
             objectPath: this.objectPath,
             functionName: method,
             parameters,
             generateTransaction,
-        })
+        }
+        if (parameters) {
+            options.parameters = { ...parameters }
+            for (const key in options.parameters) {
+                const param: any = parameters[key]
+                if (param && param.hasOwnProperty('objectPath')) {
+                    options.parameters[key] = (param as UObject).objectPath
+                }
+            }
+        }
+        return this.remoteObjectCall(options)
     }
     async getProperty(property: string) {
         const value = await this.remoteObjectProperty({
