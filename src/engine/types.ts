@@ -12,6 +12,8 @@ export type FVector = {
     Z: number
 }
 
+export type TEnumAsByte<E> = keyof E
+
 export type FHitResult = {
     bBlockingHit: boolean,
     bStartPenetrating: boolean,
@@ -51,6 +53,34 @@ export type FRotator = {
     Yaw: number
 }
 
+export type FVector2D = {
+    X: number,
+    Y: number
+}
+
 export type FAssetData = {
 
+}
+
+export type FEditorScriptingMeshReductionOptions = {
+
+}
+
+export enum EScriptingCollisionShapeType {
+    Box = 'Box',
+    Sphere = 'Sphere',
+    Capsule = 'Capsule',
+    NDOP10_X = 'NDOP10_X',
+    NDOP10_Y = 'NDOP10_Y',
+    NDOP10_Z = 'NDOP10_Z',
+    NDOP18 = 'NDOP18',
+    NDOP26 = 'NDOP26',
+}
+
+export enum ECollisionTraceFlag {
+    CTF_UseDefault = "CTF_UseDefault",
+    CTF_UseSimpleAndComplex = "CTF_UseSimpleAndComplex",
+    CTF_UseSimpleAsComplex = "CTF_UseSimpleAsComplex",
+    CTF_UseComplexAsSimple = "CTF_UseComplexAsSimple",
+    CTF_MAX = "CTF_MAX",
 }

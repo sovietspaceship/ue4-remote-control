@@ -151,7 +151,6 @@ export type ${type} = {
         methods.push(`
     async ${name}(${sections.argsList}): Promise<${sections.returnSchema}> {
         ${sections.body}
-    }
-`)
+    }`)
     }
 };

@@ -129,7 +129,7 @@ The main goal is to implement the following libraries:
     * [UEditorAssetLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorAssetLibrary/index.html) :heavy_check_mark:
     * [UEditorFilterLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorFilterLibrary/index.html)
     * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html) :heavy_check_mark:
-    * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html)
+    * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html) :heavy_check_mark:
     * [UEditorStaticMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorStaticMeshLibrary/index.html)
 
 Also, I created a separate project for functions that are not provided by the engine:
