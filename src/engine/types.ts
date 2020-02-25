@@ -1,10 +1,16 @@
+import { UClass } from "../classes/objects/class";
+
 export type UObjectPath = string
+
+export type UObjectRef<T> = UObjectPath
 
 export type TMap<Key extends string | number, Value> = { [key: string]: Value };
 
 export type FName = string
 
 export type FString = string
+
+export type TSubclassOf<T> = UObjectRef<UClass>
 
 export type FVector = {
     X: number,

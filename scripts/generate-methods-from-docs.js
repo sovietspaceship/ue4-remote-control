@@ -33,19 +33,26 @@ function extractSignatures() {
         let parsedType = type.replace(/\s*(const|class)\s+/, '').replace(/[&\*]/g, '').replace(/\s*([<>])\s*/g, '$1').replace(/\s+/g, ' ').replace(/class /g, '').trim()
         let schema = parsedType
         const arrayMatch = parsedType.match(/TArray<\s*(.+)>/)
+        let isArray = false
         if (arrayMatch) {
             parsedType = arrayMatch[1].replace(/class /g, '')
-            schema = parsedType + '[]'
+            schema = parsedType
+            isArray = true
         }
-        const uclassMatch = parsedType.match(/TSubclassOf<\s*(.+)>/)
+        const uclassMatch = parsedType.match(/TSubclassOf<\s*([^>]+)>/)
         if (uclassMatch) {
-            schema = 'UClass'
+            className = uclassMatch[1].trim()
+            schema = `TSubclassOf<${className}>`
         }
         if (schema === 'bool') {
             schema = 'boolean'
         }
-        const rschema = ['U', 'A'].includes(schema[0]) ? 'UObjectPath' : schema
+        let rschema = ['U', 'A'].includes(schema[0]) ? `UObjectRef<${schema}>` : schema
         types[parsedType] = true
+        if (isArray) {
+            schema += '[]'
+            rschema += '[]'
+        }
         return { schema, rschema }
     }
 

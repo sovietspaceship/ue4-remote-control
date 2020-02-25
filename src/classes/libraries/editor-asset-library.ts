@@ -1,6 +1,6 @@
 import { UObject } from '../uobject'
 import { ReturnValue } from '../../api/schema'
-import { FString, FName, TMap, FAssetData, UObjectPath } from '../../engine/types'
+import { FString, FName, TMap, FAssetData, UObjectPath, UObjectRef } from '../../engine/types'
 import { UClass } from '../objects/class'
 
 export class EditorAssetLibrary extends UObject {
@@ -72,8 +72,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async DuplicateAsset(SourceAssetPath: FString, DestinationAssetPath: FString): Promise<UObjectPath> {
-        const { ReturnValue } = await this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath }) as ReturnValue<UObjectPath>
+    async DuplicateAsset(SourceAssetPath: FString, DestinationAssetPath: FString): Promise<UObjectRef<UObject>> {
+        const { ReturnValue } = await this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath }) as ReturnValue<UObjectRef<UObject>>
         return ReturnValue
     }
 
@@ -82,8 +82,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async DuplicateLoadedAsset(SourceAsset: UObject, DestinationAssetPath: FString): Promise<UObjectPath> {
-        const { ReturnValue } = await this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath }) as ReturnValue<UObjectPath>
+    async DuplicateLoadedAsset(SourceAsset: UObject, DestinationAssetPath: FString): Promise<UObjectRef<UObject>> {
+        const { ReturnValue } = await this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath }) as ReturnValue<UObjectRef<UObject>>
         return ReturnValue
     }
 
@@ -127,13 +127,13 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async LoadAsset(AssetPath: FString): Promise<UObjectPath> {
-        const { ReturnValue } = await this.call('LoadAsset', { AssetPath }) as ReturnValue<UObjectPath>
+    async LoadAsset(AssetPath: FString): Promise<UObjectRef<UObject>> {
+        const { ReturnValue } = await this.call('LoadAsset', { AssetPath }) as ReturnValue<UObjectRef<UObject>>
         return ReturnValue
     }
 
-    async LoadBlueprintClass(AssetPath: FString): Promise<UObjectPath> {
-        const { ReturnValue } = await this.call('LoadBlueprintClass', { AssetPath }) as ReturnValue<UObjectPath>
+    async LoadBlueprintClass(AssetPath: FString): Promise<UObjectRef<UClass>> {
+        const { ReturnValue } = await this.call('LoadBlueprintClass', { AssetPath }) as ReturnValue<UObjectRef<UClass>>
         return ReturnValue
     }
 
