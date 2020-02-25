@@ -78,9 +78,20 @@ export enum EScriptingCollisionShapeType {
 }
 
 export enum ECollisionTraceFlag {
-    CTF_UseDefault = "CTF_UseDefault",
-    CTF_UseSimpleAndComplex = "CTF_UseSimpleAndComplex",
-    CTF_UseSimpleAsComplex = "CTF_UseSimpleAsComplex",
-    CTF_UseComplexAsSimple = "CTF_UseComplexAsSimple",
-    CTF_MAX = "CTF_MAX",
+    CTF_UseDefault = 'CTF_UseDefault',
+    CTF_UseSimpleAndComplex = 'CTF_UseSimpleAndComplex',
+    CTF_UseSimpleAsComplex = 'CTF_UseSimpleAsComplex',
+    CTF_UseComplexAsSimple = 'CTF_UseComplexAsSimple',
+    CTF_MAX = 'CTF_MAX',
+}
+
+export enum EEditorScriptingFilterType {
+    Include = 'Include',
+    Exclude = 'Exclude',
+}
+
+export enum EEditorScriptingStringMatchType {
+    Contains = 'Contains',
+    MatchesWildcard = 'MatchesWildcard',
+    ExactMatch = 'ExactMatch',
 }
