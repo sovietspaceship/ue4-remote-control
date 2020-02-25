@@ -1,4 +1,4 @@
-export type ObjectPath = string
+export type UObjectPath = string
 
 export type TMap<Key extends string | number, Value> = { [key: string]: Value };
 
@@ -29,8 +29,8 @@ export type FHitResult = {
     PenetrationDepth: number,
     Item: number,
     PhysMaterial: string,
-    Actor: ObjectPath,
-    Component: ObjectPath,
+    Actor: UObjectPath,
+    Component: UObjectPath,
     BoneName: FName,
     MyBoneName: FName
 }

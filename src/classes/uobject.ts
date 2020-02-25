@@ -1,6 +1,6 @@
 import { Resource } from '../api/resource'
 
-import { ObjectPath } from '../engine/types'
+import { UObjectPath } from '../engine/types'
 
 import {
     RemoteObjectCall,
@@ -13,7 +13,7 @@ import {
 
 export class UObject extends Resource {
     properties: UnknownObject = {}
-    constructor(public objectPath: ObjectPath) {
+    constructor(public objectPath: UObjectPath) {
         super()
     }
     async remoteObjectCall(properties: RemoteObjectCall) {
@@ -72,6 +72,6 @@ export class UObject extends Resource {
     }
 }
 
-export function buildObjectPath(path: string, objects: { name: string, subobject: string }[]) {
+export function buildUObjectPath(path: string, objects: { name: string, subobject: string }[]) {
     return objects.reduce((path, object) => `${path}:${object.name}.${object.subobject}`, `${path}/`)
 }

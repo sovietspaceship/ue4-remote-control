@@ -1,6 +1,6 @@
 import { UObject } from '../uobject'
 import { ReturnValue } from '../../api/schema'
-import { FName, FString, EEditorScriptingFilterType, EEditorScriptingStringMatchType } from '../../engine/types'
+import { FName, FString, EEditorScriptingFilterType, EEditorScriptingStringMatchType, UObjectPath } from '../../engine/types'
 import { AActor } from '../actors/actor'
 import { UClass } from '../objects/class'
 
@@ -19,13 +19,13 @@ export class EditorFilterLibrary extends UObject {
         return ReturnValue
     }
 
-    async ByClass(TargetArray: UObject[], ObjectClass: UClass, FilterType: EEditorScriptingFilterType): Promise<UObject[]> {
-        const { ReturnValue } = await this.call('ByClass', { TargetArray, ObjectClass, FilterType }) as ReturnValue<UObject[]>
+    async ByClass(TargetArray: UObject[], ObjectClass: UClass, FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByClass', { TargetArray, ObjectClass, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async ByIDName(TargetArray: UObject[], NameSubString: FString, StringMatch: EEditorScriptingStringMatchType, FilterType: EEditorScriptingFilterType): Promise<UObject[]> {
-        const { ReturnValue } = await this.call('ByIDName', { TargetArray, NameSubString, StringMatch, FilterType }) as ReturnValue<UObject[]>
+    async ByIDName(TargetArray: UObject[], NameSubString: FString, StringMatch: EEditorScriptingStringMatchType, FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByIDName', { TargetArray, NameSubString, StringMatch, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 

@@ -1,6 +1,6 @@
 import { UObject } from '../uobject'
 import { ReturnValue } from '../../api/schema'
-import { FString, FName, TMap, FAssetData } from '../../engine/types'
+import { FString, FName, TMap, FAssetData, UObjectPath } from '../../engine/types'
 import { UClass } from '../objects/class'
 
 export class EditorAssetLibrary extends UObject {
@@ -72,8 +72,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async DuplicateAsset(SourceAssetPath: FString, DestinationAssetPath: FString): Promise<UObject> {
-        const { ReturnValue } = await this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath }) as ReturnValue<UObject>
+    async DuplicateAsset(SourceAssetPath: FString, DestinationAssetPath: FString): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
@@ -82,8 +82,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async DuplicateLoadedAsset(SourceAsset: UObject, DestinationAssetPath: FString): Promise<UObject> {
-        const { ReturnValue } = await this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath }) as ReturnValue<UObject>
+    async DuplicateLoadedAsset(SourceAsset: UObject, DestinationAssetPath: FString): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
@@ -127,8 +127,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async LoadAsset(AssetPath: FString): Promise<UObject> {
-        const { ReturnValue } = await this.call('LoadAsset', { AssetPath }) as ReturnValue<UObject>
+    async LoadAsset(AssetPath: FString): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('LoadAsset', { AssetPath }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
