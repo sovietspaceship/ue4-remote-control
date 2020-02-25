@@ -9,20 +9,23 @@ __Important: The feature is currently in Beta in the engine, so it may require u
 The client is written in TypeScript and provides an object interface emulating UE4's object intefaces, and some
 type definition for engine data structures.
 
-## Objects
+## Contents
+
+* [Classes](#classes)
+* [Examples](#examples)
+* [Low level API](#low-level-api)
+- [Roadmap](#roadmap)
+
+## Classes
 
 Classes can extend UObject to emulate their interface in the engine code. This is not necessary
 to interact with the engine, but ensures all requests are typechecked by TypeScript.
-Currently supported are:
 
-* AActor
-    - GetActorLocation
-    - SetActorLocation
-* EditorLevelLibrary
-    - getAllLevelActors
-
-To create a new object type, extend UObject. See src/objects for more examples.
+To create a new object type, extend UObject. See `src/objects` for more examples.
 Blueprint libraries are referenced by their default object, e.g. `/Script/EditorScriptingUtilities.Default__EditorLevelLibrary`.
+Classes can inherit from each other, e.g. `AStaticMeshActor` can inherit from `AActor`. The system
+is designed to mimick regular engine code, with the caveat that objects are not serialised ion requests,
+but referenced by their path instead.
 
 ```typescript
 import { AActor } from 'ue4-remote-control/objects/actor'
@@ -46,7 +49,7 @@ then, to use the new method
 const human = new AHuman('/Game/CatGame:Level.Level:Human.CatPetter')
 const cat = new ACat('/Game/CatGame:Level.Level:Cat.Nyasu')
 
-const catIsHappy: boolean = await human.petCat(cat, 15120)
+const catIsHappy: boolean = await human.PetCat(cat, 15120)
 ```
 
 If you create some useful engine object classes, please submit a merge request!
@@ -57,7 +60,7 @@ If you create some useful engine object classes, please submit a merge request!
 ```typescript
 import { EditorLevelLibrary } from 'objects/editor-level-library'
 const ell = new EditorLevelLibrary()
-const actors = await ell.getAllLevelActors()
+const actors = await ell.GetAllLevelActors()
 /*
     actors = [
         '/Game/Project/Level.Level:PersistentLevel.Actor1',
@@ -95,7 +98,7 @@ await actor.set('propertyName', 100)
 
 Properties are cached when first retrieved. To reload, call `loadAll` or pass `true` as second argument to `get`.
 
-## Simplified request api
+## Low level API
 
 If you don't need the whole object architecture, you can use `makeRequest`, defined in `src/index.ts`:
 
@@ -113,7 +116,9 @@ const response = await makeRequest('put', '/remote/object/call', {
 })
 ```
 
-## Server-side libraries
+## Roadmap
+
+The main goal is to implement the following libraries:
 
 * [EditorScripting](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/index.html)
     * [FEditorScriptingCreateProxyMeshActorOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingCreateProxyMeshA-/index.html)
@@ -123,8 +128,10 @@ const response = await makeRequest('put', '/remote/object/call', {
     * [FEditorScriptingMeshReductionSettings](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMeshReductionSet-/index.html)
     * [UEditorAssetLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorAssetLibrary/index.html)
     * [UEditorFilterLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorFilterLibrary/index.html)
-    * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html)
+    * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html) :heavy_check_mark:
     * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html)
     * [UEditorStaticMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorStaticMeshLibrary/index.html)
+
+Also, I created a separate project for functions that are not provided by the engine:
 
 * [UE4RemoteControlLibrary](https://github.com/sovietspaceship/UE4RemoteControlLibrary)
