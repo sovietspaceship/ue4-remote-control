@@ -12,6 +12,7 @@ type definition for engine data structures.
 ## Contents
 
 * [Classes](#classes)
+* [Libraries](#libraries)
 * [Examples](#examples)
 * [Low level API](#low-level-api)
 * [Roadmap](#roadmap)
@@ -53,6 +54,13 @@ const catIsHappy: boolean = await human.PetCat(cat, 15120)
 ```
 
 If you create some useful engine object classes, please submit a merge request!
+
+## Libraries
+
+Several engine libraries are included. Check [src/classes/libraries](https://github.com/sovietspaceship/ue4-remote-control/tree/master/src/classes/libraries)
+to see available methods. Most of these have been generated with `scripts/generate-methods-from-docs.js` so, while it tries to preserve
+as much type information as possible, some signatures may not match. This also generates a lot of classes, structs and enums
+with empty definitions, which will have to be implemented.
 
 ## Examples
 
@@ -132,6 +140,11 @@ Additional libraries implemented:
 * [EditorUtilityLibrary](https://docs.unrealengine.com/en-US/API/Editor/Blutility/UEditorUtilityLibrary/index.html) :heavy_check_mark:
 * [GameplayStatics](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UGameplayStatics/index.html) :heavy_check_mark:
 * [BlueprintPathsLibrary](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UBlueprintPathsLibrary/index.html) :heavy_check_mark:
+
+Missing:
+
+* Add implementations for classes, structs and enums lacking a body.
+* Type signatures for class properties.
 
 Also, I created a separate project for functions that are not provided by the engine:
 
