@@ -44,8 +44,9 @@ function extractSignatures() {
         if (schema === 'bool') {
             schema = 'boolean'
         }
+        const rschema = ['U', 'A'].includes(schema[0]) ? 'UObjectPath' : schema
         types[parsedType] = true
-        return { schema }
+        return { schema, rschema }
     }
 
     function parseParams(params) {
@@ -67,7 +68,7 @@ function extractSignatures() {
     }
 
     function makeSchema(name, types) {
-        const paramProps = types.map(param => `${param.name}: ${param.type.schema}`).join(',\n    ')
+        const paramProps = types.map(param => `${param.name}: ${param.type.rschema}`).join(',\n    ')
         return `type ${name} = {
     ${paramProps}
 }`
@@ -103,6 +104,13 @@ export type ${type} = {
 }
 `
                     break
+                }
+                case 'E': {
+                    out += `
+export enum ${type} {
+
+}
+`
                 }
             }
         }
@@ -141,10 +149,10 @@ export type ${type} = {
                 sections.returnSchema = 'void'
             } else {
                 sections.body = [
-                    `const { ReturnValue } = ${sections.call} as ReturnValue<${returnType.schema}>`,
+                    `const { ReturnValue } = ${sections.call} as ReturnValue<${returnType.rschema}>`,
                     '        return ReturnValue'
                 ].join('\n')
-                sections.returnSchema = returnType.schema
+                sections.returnSchema = returnType.rschema
             }
         }
 
