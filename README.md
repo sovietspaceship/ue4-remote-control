@@ -24,11 +24,11 @@ to interact with the engine, but ensures all requests are typechecked by TypeScr
 To create a new object type, extend UObject. See `src/objects` for more examples.
 Blueprint libraries are referenced by their default object, e.g. `/Script/EditorScriptingUtilities.Default__EditorLevelLibrary`.
 Classes can inherit from each other, e.g. `AStaticMeshActor` can inherit from `AActor`. The system
-is designed to mimick regular engine code, with the caveat that objects are not serialised ion requests,
+is designed to mimick regular engine code, with the caveat that objects are not serialised in request payloads,
 but referenced by their path instead.
 
 ```typescript
-import { AActor } from 'ue4-remote-control/objects/actor'
+import { AActor } from 'ue4-remote-control/classes/actor'
 
 type PetCatRequest = {
     cat: ACat,
@@ -58,7 +58,7 @@ If you create some useful engine object classes, please submit a merge request!
 
 * Getting all actors in the currently open level:
 ```typescript
-import { EditorLevelLibrary } from 'objects/editor-level-library'
+import { EditorLevelLibrary } from './classes/libraries/editor-level-library'
 const ell = new EditorLevelLibrary()
 const actors = await ell.GetAllLevelActors()
 /*
