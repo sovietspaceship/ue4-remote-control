@@ -126,7 +126,7 @@ The main goal is to implement the following libraries:
     * [FEditorScriptingMergeStaticMeshActorsOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMergeStaticMeshA-/index.html)
     * [FEditorScriptingMeshReductionOptions](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMeshReductionOpt-/index.html)
     * [FEditorScriptingMeshReductionSettings](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/FEditorScriptingMeshReductionSet-/index.html)
-    * [UEditorAssetLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorAssetLibrary/index.html)
+    * [UEditorAssetLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorAssetLibrary/index.html) :heavy_check_mark:
     * [UEditorFilterLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorFilterLibrary/index.html)
     * [UEditorLevelLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorLevelLibrary/index.html) :heavy_check_mark:
     * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html)

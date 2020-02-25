@@ -1,5 +1,7 @@
 export type ObjectPath = string
 
+export type TMap<Key extends string | number, Value> = { [key: string]: Value };
+
 export type FName = string
 
 export type FString = string
@@ -47,4 +49,8 @@ export type FRotator = {
     Pitch: number,
     Roll: number,
     Yaw: number
+}
+
+export type FAssetData = {
+
 }
