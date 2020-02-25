@@ -1,7 +1,7 @@
 import { UObject } from '../uobject'
 import { ReturnValue } from '../../api/schema'
 import { AStaticMeshActor } from '../actors/static-mesh-actor'
-import { FVector, FRotator, FName, FString, FEditorScriptingMergeStaticMeshActorsOptions, FEditorScriptingJoinStaticMeshActorsOptions, FEditorScriptingCreateProxyMeshActorOptions } from '../../engine/types'
+import { FVector, FRotator, FName, FString, FEditorScriptingMergeStaticMeshActorsOptions, FEditorScriptingJoinStaticMeshActorsOptions, FEditorScriptingCreateProxyMeshActorOptions, UObjectPath } from '../../engine/types'
 import { AActor } from '../actors/actor'
 import { UClass } from '../objects/class'
 import { UStaticMesh } from '../objects/static-mesh'
@@ -29,8 +29,8 @@ export class EditorLevelLibrary extends UObject {
         await this.call('ClearActorSelectionSet')
     }
 
-    async ConvertActors(Actors: AActor[], ActorClass: UClass, StaticMeshPackagePath: FString): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('ConvertActors', { Actors, ActorClass, StaticMeshPackagePath }) as ReturnValue<AActor[]>
+    async ConvertActors(Actors: AActor[], ActorClass: UClass, StaticMeshPackagePath: FString): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ConvertActors', { Actors, ActorClass, StaticMeshPackagePath }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
@@ -59,28 +59,28 @@ export class EditorLevelLibrary extends UObject {
         await this.call('EjectPilotLevelActor')
     }
 
-    async GetActorReference(PathToActor: FString): Promise<AActor> {
-        const { ReturnValue } = await this.call('GetActorReference', { PathToActor }) as ReturnValue<AActor>
+    async GetActorReference(PathToActor: FString): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('GetActorReference', { PathToActor }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
-    async GetAllLevelActors(): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('GetAllLevelActors') as ReturnValue<AActor[]>
+    async GetAllLevelActors(): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('GetAllLevelActors') as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async GetAllLevelActorsComponents(): Promise<UActorComponent[]> {
-        const { ReturnValue } = await this.call('GetAllLevelActorsComponents') as ReturnValue<UActorComponent[]>
+    async GetAllLevelActorsComponents(): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('GetAllLevelActorsComponents') as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async GetEditorWorld(): Promise<UWorld> {
-        const { ReturnValue } = await this.call('GetEditorWorld') as ReturnValue<UWorld>
+    async GetEditorWorld(): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('GetEditorWorld') as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
-    async GetGameWorld(): Promise<UWorld> {
-        const { ReturnValue } = await this.call('GetGameWorld') as ReturnValue<UWorld>
+    async GetGameWorld(): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('GetGameWorld') as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
@@ -89,13 +89,13 @@ export class EditorLevelLibrary extends UObject {
         return ReturnValue
     }
 
-    async GetSelectedLevelActors(): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('GetSelectedLevelActors') as ReturnValue<AActor[]>
+    async GetSelectedLevelActors(): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('GetSelectedLevelActors') as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async JoinStaticMeshActors(ActorsToJoin: AStaticMeshActor[], JoinOptions: FEditorScriptingJoinStaticMeshActorsOptions): Promise<AActor> {
-        const { ReturnValue } = await this.call('JoinStaticMeshActors', { ActorsToJoin, JoinOptions }) as ReturnValue<AActor>
+    async JoinStaticMeshActors(ActorsToJoin: AStaticMeshActor[], JoinOptions: FEditorScriptingJoinStaticMeshActorsOptions): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('JoinStaticMeshActors', { ActorsToJoin, JoinOptions }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
@@ -169,13 +169,13 @@ export class EditorLevelLibrary extends UObject {
         await this.call('SetSelectedLevelActors', { ActorsToSelect })
     }
 
-    async SpawnActorFromClass(ActorClass: UClass, Location: FVector, Rotation: FRotator): Promise<AActor> {
-        const { ReturnValue } = await this.call('SpawnActorFromClass', { ActorClass, Location, Rotation }) as ReturnValue<AActor>
+    async SpawnActorFromClass(ActorClass: UClass, Location: FVector, Rotation: FRotator): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('SpawnActorFromClass', { ActorClass, Location, Rotation }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
-    async SpawnActorFromObject(ObjectToUse: UObject, Location: FVector, Rotation: FRotator): Promise<AActor> {
-        const { ReturnValue } = await this.call('SpawnActorFromObject', { ObjectToUse, Location, Rotation }) as ReturnValue<AActor>
+    async SpawnActorFromObject(ObjectToUse: UObject, Location: FVector, Rotation: FRotator): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('SpawnActorFromObject', { ObjectToUse, Location, Rotation }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 }

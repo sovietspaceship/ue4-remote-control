@@ -9,13 +9,13 @@ export class EditorFilterLibrary extends UObject {
         super('/Script/EditorScriptingUtilities.Default__EditorFilterLibrary')
     }
 
-    async ByActorLabel(TargetArray: AActor[], NameSubString: FString, StringMatch: EEditorScriptingStringMatchType, FilterType: EEditorScriptingFilterType, bIgnoreCase: boolean): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('ByActorLabel', { TargetArray, NameSubString, StringMatch, FilterType, bIgnoreCase }) as ReturnValue<AActor[]>
+    async ByActorLabel(TargetArray: AActor[], NameSubString: FString, StringMatch: EEditorScriptingStringMatchType, FilterType: EEditorScriptingFilterType, bIgnoreCase: boolean): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByActorLabel', { TargetArray, NameSubString, StringMatch, FilterType, bIgnoreCase }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async ByActorTag(TargetArray: AActor[], Tag: FName, FilterType: EEditorScriptingFilterType): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('ByActorTag', { TargetArray, Tag, FilterType }) as ReturnValue<AActor[]>
+    async ByActorTag(TargetArray: AActor[], Tag: FName, FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByActorTag', { TargetArray, Tag, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
@@ -29,18 +29,18 @@ export class EditorFilterLibrary extends UObject {
         return ReturnValue
     }
 
-    async ByLayer(TargetArray: AActor[], LayerName: FName, FilterType: EEditorScriptingFilterType): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('ByLayer', { TargetArray, LayerName, FilterType }) as ReturnValue<AActor[]>
+    async ByLayer(TargetArray: AActor[], LayerName: FName, FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByLayer', { TargetArray, LayerName, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async ByLevelName(TargetArray: AActor[], LevelName: FName, FilterType: EEditorScriptingFilterType): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('ByLevelName', { TargetArray, LevelName, FilterType }) as ReturnValue<AActor[]>
+    async ByLevelName(TargetArray: AActor[], LevelName: FName, FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('ByLevelName', { TargetArray, LevelName, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 
-    async BySelection(TargetArray: AActor[], FilterType: EEditorScriptingFilterType): Promise<AActor[]> {
-        const { ReturnValue } = await this.call('BySelection', { TargetArray, FilterType }) as ReturnValue<AActor[]>
+    async BySelection(TargetArray: AActor[], FilterType: EEditorScriptingFilterType): Promise<UObjectPath[]> {
+        const { ReturnValue } = await this.call('BySelection', { TargetArray, FilterType }) as ReturnValue<UObjectPath[]>
         return ReturnValue
     }
 }

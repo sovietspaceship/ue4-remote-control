@@ -132,8 +132,8 @@ export class EditorAssetLibrary extends UObject {
         return ReturnValue
     }
 
-    async LoadBlueprintClass(AssetPath: FString): Promise<UClass> {
-        const { ReturnValue } = await this.call('LoadBlueprintClass', { AssetPath }) as ReturnValue<UClass>
+    async LoadBlueprintClass(AssetPath: FString): Promise<UObjectPath> {
+        const { ReturnValue } = await this.call('LoadBlueprintClass', { AssetPath }) as ReturnValue<UObjectPath>
         return ReturnValue
     }
 
