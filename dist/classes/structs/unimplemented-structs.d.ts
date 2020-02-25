@@ -1,0 +1,12 @@
+export declare type FAsyncLoadGameFromSlotDelegate = {};
+export declare type FAsyncSaveGameToSlotDelegate = {};
+export declare type FMinimalViewInfo = {};
+export declare type FPredictProjectilePathParams = {};
+export declare type FPredictProjectilePathResult = {};
+export declare type FTransform = {};
+export declare type FCollisionResponseParams = {};
+export declare type FDialogueContext = {};
+export declare type FIntVector = {};
+export declare type FLatentActionInfo = {};
+export declare type FMemoryReader = {};
+export declare type FRotator = {};

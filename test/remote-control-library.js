@@ -1,4 +1,4 @@
-const { RemoteControlLibrary } = require('../out/classes/libraries/remote-control-library')
+const { RemoteControlLibrary } = require('../dist/classes/libraries/remote-control-library')
 
 const { expect } = require('chai')
 

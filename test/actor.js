@@ -1,5 +1,5 @@
-const { EditorLevelLibrary } = require('../out/classes/libraries/editor-level-library')
-const { AActor } = require('../out/classes/actors/actor')
+const { EditorLevelLibrary } = require('../dist/classes/libraries/editor-level-library')
+const { AActor } = require('../dist/classes/actors/actor')
 
 const { expect } = require('chai')
 

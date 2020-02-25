@@ -2,7 +2,7 @@
   "name": "ue4-remote-control",
   "version": "1.0.0",
   "description": "Control the Unreal Editor via HTTP with Node",
-  "main": "out/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "compile": "tsc -p ./",
     "lint": "tslint -p ./",

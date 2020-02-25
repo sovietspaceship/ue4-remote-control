@@ -1,0 +1,56 @@
+import { UObject } from '../uobject';
+import { AStaticMeshActor } from '../actors/static-mesh-actor';
+import { FVector, FRotator, FName, FString, FEditorScriptingMergeStaticMeshActorsOptions, FEditorScriptingJoinStaticMeshActorsOptions, FEditorScriptingCreateProxyMeshActorOptions, TSubclassOf, UObjectRef } from '../../engine/types';
+import { AActor } from '../actors/actor';
+import { UStaticMesh } from '../objects/static-mesh';
+import { UStaticMeshComponent } from '../objects/static-mesh-component';
+import { UMaterialInterface } from '../objects/material-interface';
+import { UMeshComponent } from '../objects/mesh-component';
+import { UWorld } from '../objects/world';
+import { UActorComponent } from '../objects/actor-component';
+declare type CreateProxyMeshActorReturn = {
+    ReturnValue: boolean;
+    OutMergedActor: AStaticMeshActor;
+};
+declare type MergeStaticMeshActorsReturn = {
+    ReturnValue: boolean;
+    OutMergedActor: AStaticMeshActor;
+};
+export declare class EditorLevelLibrary extends UObject {
+    constructor();
+    ClearActorSelectionSet(): Promise<void>;
+    ConvertActors(Actors: AActor[], ActorClass: TSubclassOf<AActor>, StaticMeshPackagePath: FString): Promise<UObjectRef<AActor>[]>;
+    CreateProxyMeshActor(ActorsToMerge: AStaticMeshActor[], MergeOptions: FEditorScriptingCreateProxyMeshActorOptions): Promise<CreateProxyMeshActorReturn>;
+    DestroyActor(ActorToDestroy: AActor): Promise<boolean>;
+    EditorInvalidateViewports(): Promise<void>;
+    EditorPlaySimulate(): Promise<void>;
+    EditorSetGameView(bGameView: boolean): Promise<void>;
+    EjectPilotLevelActor(): Promise<void>;
+    GetActorReference(PathToActor: FString): Promise<UObjectRef<AActor>>;
+    GetAllLevelActors(): Promise<UObjectRef<AActor>[]>;
+    GetAllLevelActorsComponents(): Promise<UObjectRef<UActorComponent>[]>;
+    GetEditorWorld(): Promise<UObjectRef<UWorld>>;
+    GetGameWorld(): Promise<UObjectRef<UWorld>>;
+    GetLevelViewportCameraInfo(CameraLocation: FVector, CameraRotation: FRotator): Promise<boolean>;
+    GetSelectedLevelActors(): Promise<UObjectRef<AActor>[]>;
+    JoinStaticMeshActors(ActorsToJoin: AStaticMeshActor[], JoinOptions: FEditorScriptingJoinStaticMeshActorsOptions): Promise<UObjectRef<AActor>>;
+    LoadLevel(AssetPath: FString): Promise<boolean>;
+    MergeStaticMeshActors(ActorsToMerge: AStaticMeshActor[], MergeOptions: FEditorScriptingMergeStaticMeshActorsOptions): Promise<MergeStaticMeshActorsReturn>;
+    NewLevel(AssetPath: FString): Promise<boolean>;
+    NewLevelFromTemplate(AssetPath: FString, TemplateAssetPath: FString): Promise<boolean>;
+    PilotLevelActor(ActorToPilot: AActor): Promise<void>;
+    ReplaceMeshComponentsMaterials(MeshComponents: UMeshComponent[], MaterialToBeReplaced: UMaterialInterface, NewMaterial: UMaterialInterface): Promise<void>;
+    ReplaceMeshComponentsMaterialsOnActors(Actors: AActor[], MaterialToBeReplaced: UMaterialInterface, NewMaterial: UMaterialInterface): Promise<void>;
+    ReplaceMeshComponentsMeshes(MeshComponents: UStaticMeshComponent[], MeshToBeReplaced: UStaticMesh, NewMesh: UStaticMesh): Promise<void>;
+    ReplaceMeshComponentsMeshesOnActors(Actors: AActor[], MeshToBeReplaced: UStaticMesh, NewMesh: UStaticMesh): Promise<void>;
+    SaveAllDirtyLevels(): Promise<boolean>;
+    SaveCurrentLevel(): Promise<boolean>;
+    SelectNothing(): Promise<void>;
+    SetActorSelectionState(Actor: AActor, bShouldBeSelected: boolean): Promise<void>;
+    SetCurrentLevelByName(LevelName: FName): Promise<boolean>;
+    SetLevelViewportCameraInfo(CameraLocation: FVector, CameraRotation: FRotator): Promise<void>;
+    SetSelectedLevelActors(ActorsToSelect: AActor[]): Promise<void>;
+    SpawnActorFromClass(ActorClass: TSubclassOf<AActor>, Location: FVector, Rotation: FRotator): Promise<UObjectRef<AActor>>;
+    SpawnActorFromObject(ObjectToUse: UObject, Location: FVector, Rotation: FRotator): Promise<UObjectRef<AActor>>;
+}
+export {};
