@@ -1,7 +1,7 @@
 import { UObject } from '../uobject'
 import { ReturnValue } from '../../api/schema'
 import { FName } from '../../engine/types'
-import { USkeletalMesh } from '../objects/sleletal-mesh'
+import { USkeletalMesh } from '../objects/skeletal-mesh'
 
 export class EditorSkeletaMeshLibrary extends UObject {
     constructor() {

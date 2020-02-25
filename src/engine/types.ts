@@ -20,6 +20,10 @@ export type FVector = {
 
 export type TEnumAsByte<E> = keyof E
 
+export type TOptional<T> = T | null
+
+export type FText = string
+
 export type FHitResult = {
     bBlockingHit: boolean,
     bStartPenetrating: boolean,
@@ -62,6 +66,10 @@ export type FRotator = {
 export type FVector2D = {
     X: number,
     Y: number
+}
+
+export type FMatrix = {
+    M: number[][]
 }
 
 export type FAssetData = {

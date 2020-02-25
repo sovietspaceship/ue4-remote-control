@@ -127,6 +127,12 @@ The main goal is to implement the following libraries:
     * [UEditorSkeletalMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorSkeletalMeshLibrary/index.html) :heavy_check_mark:
     * [UEditorStaticMeshLibrary](https://docs.unrealengine.com/en-US/API/Plugins/EditorScriptingUtilities/UEditorStaticMeshLibrary/index.html) :heavy_check_mark:
 
+Additional libraries implemented:
+
+* [EditorUtilityLibrary](https://docs.unrealengine.com/en-US/API/Editor/Blutility/UEditorUtilityLibrary/index.html) :heavy_check_mark:
+* [GameplayStatics](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UGameplayStatics/index.html) :heavy_check_mark:
+* [BlueprintPathsLibrary](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UBlueprintPathsLibrary/index.html) :heavy_check_mark:
+
 Also, I created a separate project for functions that are not provided by the engine:
 
 * [UE4RemoteControlLibrary](https://github.com/sovietspaceship/UE4RemoteControlLibrary)
