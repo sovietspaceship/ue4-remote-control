@@ -31,6 +31,7 @@ You need a [Node.js](https://nodejs.org) installation with npm.
 
 ```
 git clone https://github.com/sovietspaceship/ue4-remote-control
+cd ue4-remote-control
 npm install
 ```
 
