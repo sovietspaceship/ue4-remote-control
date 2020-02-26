@@ -1,8 +1,14 @@
 # Unreal Engine 4 Web Remote Control
 
-This project implements a [remote control](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/QuickStart/index.html) client for Unreal Engine 4 Editor (since 4.23).
+This project implements a [remote control](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
+client for the Unreal Engine 4 editor (since 4.23).
 
-It allows remote control over HTTP via JSON of a running Unreal Editor instance.
+It implements the remote control protocol client over HTTP via JSON of a running Unreal Editor instance, and allows external programs to
+interact with the Unreal Editor in real time via HTTP with JSON, with a fully object-oriented interface emulating C++ code.
+It can be used from the browser or with Node, and is fully typed. Several engine blueprint libraries are also included.
+
+Read [what you can do](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
+with Web Remote Control and the installation instructions below to get started.
 
 __Important: The feature is currently in Beta in the engine, so it may require updating between different engine releases.__
 
@@ -12,10 +18,39 @@ type definition for engine data structures.
 ## Contents
 
 * [Classes](#classes)
+* [Installation](#installation)
 * [Libraries](#libraries)
 * [Examples](#examples)
 * [Low level API](#low-level-api)
 * [Roadmap](#roadmap)
+* [Documentation links](#documentation-links)
+
+## Installation
+
+You need a [Node.js](https://nodejs.org) installation with npm.
+
+```
+git clone https://github.com/sovietspaceship/ue4-remote-control
+npm install
+```
+
+To build, run `npm run compile`. This will compile all TypeScript files to ECMAScript 6
+in `dist/`, with typings included. This step is optional as compiled files are already provided
+in the repository, but required if you make any changes.
+
+To use in your library as a dependency, run
+
+```
+npm install https://github.com/sovietspaceship/ue4-remote-control
+```
+
+and then require or import it in one of the following ways:
+
+```
+import { UObject } from 'ue4-remote-control/dist/classes/uobject' // full access to all classes by path; dist is required for the time being
+const { AActor } from 'ue4-remote-control/dist/classes/actors/actor'
+import { UObject } from 'ue4-remote-control' // this only exposes some core functionality exported by src/index.ts
+```
 
 ## Classes
 
@@ -141,7 +176,7 @@ Additional libraries implemented:
 * [GameplayStatics](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UGameplayStatics/index.html) :heavy_check_mark:
 * [BlueprintPathsLibrary](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Kismet/UBlueprintPathsLibrary/index.html) :heavy_check_mark:
 
-Missing:
+Missing development:
 
 * Add implementations for classes, structs and enums lacking a body.
 * Type signatures for class properties.
@@ -149,3 +184,11 @@ Missing:
 Also, I created a separate project for functions that are not provided by the engine:
 
 * [UE4RemoteControlLibrary](https://github.com/sovietspaceship/UE4RemoteControlLibrary)
+
+## Documentation links
+
+### Unreal Engine Web Remote Control (Official)
+
+* [Web Remote Control](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
+    * [Quickstart](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/QuickStart/index.html)
+    * [Reference](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/Endpoints/index.html)
