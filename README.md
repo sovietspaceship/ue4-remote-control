@@ -3,8 +3,8 @@
 This project implements a [remote control](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
 client for the Unreal Engine 4 editor (since 4.23).
 
-It implements the remote control protocol client over HTTP via JSON of a running Unreal Editor instance, and allows external programs to
-interact with the Unreal Editor in real time via HTTP with JSON, with a fully object-oriented interface emulating C++ code.
+It implements the remote control protocol client over HTTP with JSON of a running Unreal Editor instance, and allows external programs to
+interact with the Unreal Editor in real time, with a fully object-oriented interface emulating C++ code.
 It can be used from the browser or with Node, and is fully typed. Several engine blueprint libraries are also included.
 
 Read [what you can do](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
