@@ -49,8 +49,8 @@ and then require or import it in one of the following ways:
 
 ```
 import { UObject } from 'ue4-remote-control/dist/classes/uobject' // full access to all classes by path; dist is required for the time being
-const { AActor } from 'ue4-remote-control/dist/classes/actors/actor'
 import { UObject } from 'ue4-remote-control' // this only exposes some core functionality exported by src/index.ts
+const { AActor } = require('ue4-remote-control/dist/classes/actors/actor')
 ```
 
 ## Classes
