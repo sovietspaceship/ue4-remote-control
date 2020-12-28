@@ -193,3 +193,9 @@ Also, I created a separate project for functions that are not provided by the en
 * [Web Remote Control](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/index.html)
     * [Quickstart](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/QuickStart/index.html)
     * [Reference](https://docs.unrealengine.com/en-US/Engine/Editor/ScriptingAndAutomation/WebControl/Endpoints/index.html)
+
+### Contributing
+
+Since everyone updates the engine at different times, I may not notice if there are issues with specific versions, or the latest.
+Please let me know if there are any breaking changes to the remote control API by opening an issue, or creating a merge request
+if you want to contribute fixes or improvements!
