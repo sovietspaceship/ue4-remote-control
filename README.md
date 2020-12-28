@@ -24,6 +24,7 @@ type definition for engine data structures.
 * [Low level API](#low-level-api)
 * [Roadmap](#roadmap)
 * [Documentation links](#documentation-links)
+* [Contributing](#contributing)
 
 ## Installation
 
