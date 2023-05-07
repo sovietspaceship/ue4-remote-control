@@ -1,5 +1,3 @@
-const UE4_SERVER_PORT = 8080;
-
 export type HttpMethodCalls = 'put' | 'PUT';
 
 export class Resource {
@@ -17,7 +15,7 @@ export class Resource {
     };
 
     const response = await fetch(
-      `http://localhost:${UE4_SERVER_PORT}${endpoint}`,
+      `http://localhost:${this.getPort()}${endpoint}`,
       options
     );
 
@@ -26,6 +24,11 @@ export class Resource {
     }
 
     return response.json();
+  }
+
+  getPort(): number {
+    const port = localStorage?.getItem('UE4_SERVER_PORT');
+    return port ? parseInt(port, 10) : 8080;
   }
 
   omitUndefined(obj: any): any {
