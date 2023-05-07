@@ -9,25 +9,31 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const rp = require("request-promise");
 const UE4_SERVER_PORT = 8080;
-const lodash_1 = require("lodash");
-const debug = require("debug");
-const d = debug('ue4-remote-control:Resource');
 class Resource {
     makeRequest(method, endpoint, body) {
         return __awaiter(this, void 0, void 0, function* () {
             const options = {
-                uri: `http://localhost:${UE4_SERVER_PORT}${endpoint}`,
                 method,
-                body: lodash_1.omitBy(body, lodash_1.isUndefined),
-                json: true
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.omitUndefined(body)),
             };
-            d('>> request', options);
-            const result = yield rp(options);
-            d('<< result', result);
-            return result;
+            const response = yield fetch(`http://localhost:${UE4_SERVER_PORT}${endpoint}`, options);
+            if (!response.ok) {
+                throw new Error(`Request failed with status ${response.status}`);
+            }
+            return response.json();
         });
+    }
+    omitUndefined(obj) {
+        return Object.entries(obj).reduce((acc, [key, value]) => {
+            if (value !== undefined) {
+                acc[key] = value;
+            }
+            return acc;
+        }, {});
     }
 }
 exports.Resource = Resource;
