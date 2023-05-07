@@ -1,500 +1,327 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const uobject_1 = require("../uobject");
 class UBlueprintPathsLibrary extends uobject_1.UObject {
     constructor() {
         super('/Script/Editor.Default__BlueprintPathsLibrary');
     }
-    AutomationDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('AutomationDir');
-            return ReturnValue;
-        });
-    }
-    AutomationLogDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('AutomationLogDir');
-            return ReturnValue;
-        });
-    }
-    AutomationTransientDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('AutomationTransientDir');
-            return ReturnValue;
-        });
-    }
-    BugItDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('BugItDir');
-            return ReturnValue;
-        });
-    }
-    ChangeExtension(InPath, InNewExtension) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ChangeExtension', { InPath, InNewExtension });
-            return ReturnValue;
-        });
-    }
-    CloudDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CloudDir');
-            return ReturnValue;
-        });
-    }
-    CollapseRelativeDirectories(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('CollapseRelativeDirectories', { InPath });
-        });
-    }
-    Combine(InPaths) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('Combine', { InPaths });
-            return ReturnValue;
-        });
-    }
-    ConvertFromSandboxPath(InPath, InSandboxName) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ConvertFromSandboxPath', { InPath, InSandboxName });
-            return ReturnValue;
-        });
-    }
-    ConvertRelativePathToFull(InPath, InBasePath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ConvertRelativePathToFull', { InPath, InBasePath });
-            return ReturnValue;
-        });
-    }
-    ConvertToSandboxPath(InPath, InSandboxName) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ConvertToSandboxPath', { InPath, InSandboxName });
-            return ReturnValue;
-        });
-    }
-    CreateTempFilename(Path, Prefix, Extension) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CreateTempFilename', { Path, Prefix, Extension });
-            return ReturnValue;
-        });
-    }
-    DiffDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DiffDir');
-            return ReturnValue;
-        });
-    }
-    DirectoryExists(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DirectoryExists', { InPath });
-            return ReturnValue;
-        });
-    }
-    EngineConfigDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineConfigDir');
-            return ReturnValue;
-        });
-    }
-    EngineContentDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineContentDir');
-            return ReturnValue;
-        });
-    }
-    EngineDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineDir');
-            return ReturnValue;
-        });
-    }
-    EngineIntermediateDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineIntermediateDir');
-            return ReturnValue;
-        });
-    }
-    EnginePluginsDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EnginePluginsDir');
-            return ReturnValue;
-        });
-    }
-    EngineSavedDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineSavedDir');
-            return ReturnValue;
-        });
-    }
-    EngineSourceDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineSourceDir');
-            return ReturnValue;
-        });
-    }
-    EngineUserDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineUserDir');
-            return ReturnValue;
-        });
-    }
-    EngineVersionAgnosticUserDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EngineVersionAgnosticUserDir');
-            return ReturnValue;
-        });
-    }
-    EnterpriseDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EnterpriseDir');
-            return ReturnValue;
-        });
-    }
-    EnterpriseFeaturePackDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EnterpriseFeaturePackDir');
-            return ReturnValue;
-        });
-    }
-    EnterprisePluginsDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('EnterprisePluginsDir');
-            return ReturnValue;
-        });
-    }
-    FeaturePackDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('FeaturePackDir');
-            return ReturnValue;
-        });
-    }
-    FileExists(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('FileExists', { InPath });
-            return ReturnValue;
-        });
-    }
-    GameAgnosticSavedDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GameAgnosticSavedDir');
-            return ReturnValue;
-        });
-    }
-    GameDevelopersDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GameDevelopersDir');
-            return ReturnValue;
-        });
-    }
-    GameSourceDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GameSourceDir');
-            return ReturnValue;
-        });
-    }
-    GameUserDeveloperDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GameUserDeveloperDir');
-            return ReturnValue;
-        });
-    }
-    GeneratedConfigDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GeneratedConfigDir');
-            return ReturnValue;
-        });
-    }
-    GetBaseFilename(InPath, bRemovePath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetBaseFilename', { InPath, bRemovePath });
-            return ReturnValue;
-        });
-    }
-    GetCleanFilename(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetCleanFilename', { InPath });
-            return ReturnValue;
-        });
-    }
-    GetEditorLocalizationPaths() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetEditorLocalizationPaths');
-            return ReturnValue;
-        });
-    }
-    GetEngineLocalizationPaths() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetEngineLocalizationPaths');
-            return ReturnValue;
-        });
-    }
-    GetExtension(InPath, bIncludeDot) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetExtension', { InPath, bIncludeDot });
-            return ReturnValue;
-        });
-    }
-    GetGameLocalizationPaths() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetGameLocalizationPaths');
-            return ReturnValue;
-        });
-    }
-    GetInvalidFileSystemChars() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetInvalidFileSystemChars');
-            return ReturnValue;
-        });
-    }
-    GetPath(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetPath', { InPath });
-            return ReturnValue;
-        });
-    }
-    GetProjectFilePath() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetProjectFilePath');
-            return ReturnValue;
-        });
-    }
-    GetPropertyNameLocalizationPaths() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetPropertyNameLocalizationPaths');
-            return ReturnValue;
-        });
-    }
-    GetRelativePathToRoot() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetRelativePathToRoot');
-            return ReturnValue;
-        });
-    }
-    GetRestrictedFolderNames() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetRestrictedFolderNames');
-            return ReturnValue;
-        });
-    }
-    GetToolTipLocalizationPaths() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetToolTipLocalizationPaths');
-            return ReturnValue;
-        });
-    }
-    HasProjectPersistentDownloadDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('HasProjectPersistentDownloadDir');
-            return ReturnValue;
-        });
-    }
-    IsDrive(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('IsDrive', { InPath });
-            return ReturnValue;
-        });
-    }
-    IsProjectFilePathSet() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('IsProjectFilePathSet');
-            return ReturnValue;
-        });
-    }
-    IsRelative(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('IsRelative', { InPath });
-            return ReturnValue;
-        });
-    }
-    IsRestrictedPath(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('IsRestrictedPath', { InPath });
-            return ReturnValue;
-        });
-    }
-    IsSamePath(PathA, PathB) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('IsSamePath', { PathA, PathB });
-            return ReturnValue;
-        });
-    }
-    LaunchDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('LaunchDir');
-            return ReturnValue;
-        });
-    }
-    MakePathRelativeTo(InPath, InRelativeTo) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('MakePathRelativeTo', { InPath, InRelativeTo });
-        });
-    }
-    MakePlatformFilename(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('MakePlatformFilename', { InPath });
-        });
-    }
-    MakeStandardFilename(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('MakeStandardFilename', { InPath });
-        });
-    }
-    MakeValidFileName(InString, InReplacementChar) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('MakeValidFileName', { InString, InReplacementChar });
-            return ReturnValue;
-        });
-    }
-    NormalizeDirectoryName(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('NormalizeDirectoryName', { InPath });
-        });
-    }
-    NormalizeFilename(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('NormalizeFilename', { InPath });
-        });
-    }
-    ProfilingDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProfilingDir');
-            return ReturnValue;
-        });
-    }
-    ProjectConfigDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectConfigDir');
-            return ReturnValue;
-        });
-    }
-    ProjectContentDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectContentDir');
-            return ReturnValue;
-        });
-    }
-    ProjectDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectDir');
-            return ReturnValue;
-        });
-    }
-    ProjectIntermediateDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectIntermediateDir');
-            return ReturnValue;
-        });
-    }
-    ProjectLogDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectLogDir');
-            return ReturnValue;
-        });
-    }
-    ProjectModsDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectModsDir');
-            return ReturnValue;
-        });
-    }
-    ProjectPersistentDownloadDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectPersistentDownloadDir');
-            return ReturnValue;
-        });
-    }
-    ProjectPluginsDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectPluginsDir');
-            return ReturnValue;
-        });
-    }
-    ProjectSavedDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectSavedDir');
-            return ReturnValue;
-        });
-    }
-    ProjectUserDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ProjectUserDir');
-            return ReturnValue;
-        });
-    }
-    RemoveDuplicateSlashes(InPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('RemoveDuplicateSlashes', { InPath });
-        });
-    }
-    RootDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('RootDir');
-            return ReturnValue;
-        });
-    }
-    SandboxesDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SandboxesDir');
-            return ReturnValue;
-        });
-    }
-    ScreenShotDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ScreenShotDir');
-            return ReturnValue;
-        });
-    }
-    SetExtension(InPath, InNewExtension) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SetExtension', { InPath, InNewExtension });
-            return ReturnValue;
-        });
-    }
-    SetProjectFilePath(NewGameProjectFilePath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield this.call('SetProjectFilePath', { NewGameProjectFilePath });
-        });
-    }
-    ShaderWorkingDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ShaderWorkingDir');
-            return ReturnValue;
-        });
-    }
-    ShouldSaveToUserDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ShouldSaveToUserDir');
-            return ReturnValue;
-        });
-    }
-    SourceConfigDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SourceConfigDir');
-            return ReturnValue;
-        });
-    }
-    Split(InPath, PathPart, FilenamePart, ExtensionPart) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield this.call('Split', { InPath, PathPart, FilenamePart, ExtensionPart });
-        });
-    }
-    ValidatePath(InPath, bDidSucceed) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.call('ValidatePath', { InPath, bDidSucceed });
-        });
-    }
-    VideoCaptureDir() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('VideoCaptureDir');
-            return ReturnValue;
-        });
+    async AutomationDir() {
+        const { ReturnValue } = await this.call('AutomationDir');
+        return ReturnValue;
+    }
+    async AutomationLogDir() {
+        const { ReturnValue } = await this.call('AutomationLogDir');
+        return ReturnValue;
+    }
+    async AutomationTransientDir() {
+        const { ReturnValue } = await this.call('AutomationTransientDir');
+        return ReturnValue;
+    }
+    async BugItDir() {
+        const { ReturnValue } = await this.call('BugItDir');
+        return ReturnValue;
+    }
+    async ChangeExtension(InPath, InNewExtension) {
+        const { ReturnValue } = await this.call('ChangeExtension', { InPath, InNewExtension });
+        return ReturnValue;
+    }
+    async CloudDir() {
+        const { ReturnValue } = await this.call('CloudDir');
+        return ReturnValue;
+    }
+    async CollapseRelativeDirectories(InPath) {
+        return await this.call('CollapseRelativeDirectories', { InPath });
+    }
+    async Combine(InPaths) {
+        const { ReturnValue } = await this.call('Combine', { InPaths });
+        return ReturnValue;
+    }
+    async ConvertFromSandboxPath(InPath, InSandboxName) {
+        const { ReturnValue } = await this.call('ConvertFromSandboxPath', { InPath, InSandboxName });
+        return ReturnValue;
+    }
+    async ConvertRelativePathToFull(InPath, InBasePath) {
+        const { ReturnValue } = await this.call('ConvertRelativePathToFull', { InPath, InBasePath });
+        return ReturnValue;
+    }
+    async ConvertToSandboxPath(InPath, InSandboxName) {
+        const { ReturnValue } = await this.call('ConvertToSandboxPath', { InPath, InSandboxName });
+        return ReturnValue;
+    }
+    async CreateTempFilename(Path, Prefix, Extension) {
+        const { ReturnValue } = await this.call('CreateTempFilename', { Path, Prefix, Extension });
+        return ReturnValue;
+    }
+    async DiffDir() {
+        const { ReturnValue } = await this.call('DiffDir');
+        return ReturnValue;
+    }
+    async DirectoryExists(InPath) {
+        const { ReturnValue } = await this.call('DirectoryExists', { InPath });
+        return ReturnValue;
+    }
+    async EngineConfigDir() {
+        const { ReturnValue } = await this.call('EngineConfigDir');
+        return ReturnValue;
+    }
+    async EngineContentDir() {
+        const { ReturnValue } = await this.call('EngineContentDir');
+        return ReturnValue;
+    }
+    async EngineDir() {
+        const { ReturnValue } = await this.call('EngineDir');
+        return ReturnValue;
+    }
+    async EngineIntermediateDir() {
+        const { ReturnValue } = await this.call('EngineIntermediateDir');
+        return ReturnValue;
+    }
+    async EnginePluginsDir() {
+        const { ReturnValue } = await this.call('EnginePluginsDir');
+        return ReturnValue;
+    }
+    async EngineSavedDir() {
+        const { ReturnValue } = await this.call('EngineSavedDir');
+        return ReturnValue;
+    }
+    async EngineSourceDir() {
+        const { ReturnValue } = await this.call('EngineSourceDir');
+        return ReturnValue;
+    }
+    async EngineUserDir() {
+        const { ReturnValue } = await this.call('EngineUserDir');
+        return ReturnValue;
+    }
+    async EngineVersionAgnosticUserDir() {
+        const { ReturnValue } = await this.call('EngineVersionAgnosticUserDir');
+        return ReturnValue;
+    }
+    async EnterpriseDir() {
+        const { ReturnValue } = await this.call('EnterpriseDir');
+        return ReturnValue;
+    }
+    async EnterpriseFeaturePackDir() {
+        const { ReturnValue } = await this.call('EnterpriseFeaturePackDir');
+        return ReturnValue;
+    }
+    async EnterprisePluginsDir() {
+        const { ReturnValue } = await this.call('EnterprisePluginsDir');
+        return ReturnValue;
+    }
+    async FeaturePackDir() {
+        const { ReturnValue } = await this.call('FeaturePackDir');
+        return ReturnValue;
+    }
+    async FileExists(InPath) {
+        const { ReturnValue } = await this.call('FileExists', { InPath });
+        return ReturnValue;
+    }
+    async GameAgnosticSavedDir() {
+        const { ReturnValue } = await this.call('GameAgnosticSavedDir');
+        return ReturnValue;
+    }
+    async GameDevelopersDir() {
+        const { ReturnValue } = await this.call('GameDevelopersDir');
+        return ReturnValue;
+    }
+    async GameSourceDir() {
+        const { ReturnValue } = await this.call('GameSourceDir');
+        return ReturnValue;
+    }
+    async GameUserDeveloperDir() {
+        const { ReturnValue } = await this.call('GameUserDeveloperDir');
+        return ReturnValue;
+    }
+    async GeneratedConfigDir() {
+        const { ReturnValue } = await this.call('GeneratedConfigDir');
+        return ReturnValue;
+    }
+    async GetBaseFilename(InPath, bRemovePath) {
+        const { ReturnValue } = await this.call('GetBaseFilename', { InPath, bRemovePath });
+        return ReturnValue;
+    }
+    async GetCleanFilename(InPath) {
+        const { ReturnValue } = await this.call('GetCleanFilename', { InPath });
+        return ReturnValue;
+    }
+    async GetEditorLocalizationPaths() {
+        const { ReturnValue } = await this.call('GetEditorLocalizationPaths');
+        return ReturnValue;
+    }
+    async GetEngineLocalizationPaths() {
+        const { ReturnValue } = await this.call('GetEngineLocalizationPaths');
+        return ReturnValue;
+    }
+    async GetExtension(InPath, bIncludeDot) {
+        const { ReturnValue } = await this.call('GetExtension', { InPath, bIncludeDot });
+        return ReturnValue;
+    }
+    async GetGameLocalizationPaths() {
+        const { ReturnValue } = await this.call('GetGameLocalizationPaths');
+        return ReturnValue;
+    }
+    async GetInvalidFileSystemChars() {
+        const { ReturnValue } = await this.call('GetInvalidFileSystemChars');
+        return ReturnValue;
+    }
+    async GetPath(InPath) {
+        const { ReturnValue } = await this.call('GetPath', { InPath });
+        return ReturnValue;
+    }
+    async GetProjectFilePath() {
+        const { ReturnValue } = await this.call('GetProjectFilePath');
+        return ReturnValue;
+    }
+    async GetPropertyNameLocalizationPaths() {
+        const { ReturnValue } = await this.call('GetPropertyNameLocalizationPaths');
+        return ReturnValue;
+    }
+    async GetRelativePathToRoot() {
+        const { ReturnValue } = await this.call('GetRelativePathToRoot');
+        return ReturnValue;
+    }
+    async GetRestrictedFolderNames() {
+        const { ReturnValue } = await this.call('GetRestrictedFolderNames');
+        return ReturnValue;
+    }
+    async GetToolTipLocalizationPaths() {
+        const { ReturnValue } = await this.call('GetToolTipLocalizationPaths');
+        return ReturnValue;
+    }
+    async HasProjectPersistentDownloadDir() {
+        const { ReturnValue } = await this.call('HasProjectPersistentDownloadDir');
+        return ReturnValue;
+    }
+    async IsDrive(InPath) {
+        const { ReturnValue } = await this.call('IsDrive', { InPath });
+        return ReturnValue;
+    }
+    async IsProjectFilePathSet() {
+        const { ReturnValue } = await this.call('IsProjectFilePathSet');
+        return ReturnValue;
+    }
+    async IsRelative(InPath) {
+        const { ReturnValue } = await this.call('IsRelative', { InPath });
+        return ReturnValue;
+    }
+    async IsRestrictedPath(InPath) {
+        const { ReturnValue } = await this.call('IsRestrictedPath', { InPath });
+        return ReturnValue;
+    }
+    async IsSamePath(PathA, PathB) {
+        const { ReturnValue } = await this.call('IsSamePath', { PathA, PathB });
+        return ReturnValue;
+    }
+    async LaunchDir() {
+        const { ReturnValue } = await this.call('LaunchDir');
+        return ReturnValue;
+    }
+    async MakePathRelativeTo(InPath, InRelativeTo) {
+        return await this.call('MakePathRelativeTo', { InPath, InRelativeTo });
+    }
+    async MakePlatformFilename(InPath) {
+        return await this.call('MakePlatformFilename', { InPath });
+    }
+    async MakeStandardFilename(InPath) {
+        return await this.call('MakeStandardFilename', { InPath });
+    }
+    async MakeValidFileName(InString, InReplacementChar) {
+        const { ReturnValue } = await this.call('MakeValidFileName', { InString, InReplacementChar });
+        return ReturnValue;
+    }
+    async NormalizeDirectoryName(InPath) {
+        return await this.call('NormalizeDirectoryName', { InPath });
+    }
+    async NormalizeFilename(InPath) {
+        return await this.call('NormalizeFilename', { InPath });
+    }
+    async ProfilingDir() {
+        const { ReturnValue } = await this.call('ProfilingDir');
+        return ReturnValue;
+    }
+    async ProjectConfigDir() {
+        const { ReturnValue } = await this.call('ProjectConfigDir');
+        return ReturnValue;
+    }
+    async ProjectContentDir() {
+        const { ReturnValue } = await this.call('ProjectContentDir');
+        return ReturnValue;
+    }
+    async ProjectDir() {
+        const { ReturnValue } = await this.call('ProjectDir');
+        return ReturnValue;
+    }
+    async ProjectIntermediateDir() {
+        const { ReturnValue } = await this.call('ProjectIntermediateDir');
+        return ReturnValue;
+    }
+    async ProjectLogDir() {
+        const { ReturnValue } = await this.call('ProjectLogDir');
+        return ReturnValue;
+    }
+    async ProjectModsDir() {
+        const { ReturnValue } = await this.call('ProjectModsDir');
+        return ReturnValue;
+    }
+    async ProjectPersistentDownloadDir() {
+        const { ReturnValue } = await this.call('ProjectPersistentDownloadDir');
+        return ReturnValue;
+    }
+    async ProjectPluginsDir() {
+        const { ReturnValue } = await this.call('ProjectPluginsDir');
+        return ReturnValue;
+    }
+    async ProjectSavedDir() {
+        const { ReturnValue } = await this.call('ProjectSavedDir');
+        return ReturnValue;
+    }
+    async ProjectUserDir() {
+        const { ReturnValue } = await this.call('ProjectUserDir');
+        return ReturnValue;
+    }
+    async RemoveDuplicateSlashes(InPath) {
+        return await this.call('RemoveDuplicateSlashes', { InPath });
+    }
+    async RootDir() {
+        const { ReturnValue } = await this.call('RootDir');
+        return ReturnValue;
+    }
+    async SandboxesDir() {
+        const { ReturnValue } = await this.call('SandboxesDir');
+        return ReturnValue;
+    }
+    async ScreenShotDir() {
+        const { ReturnValue } = await this.call('ScreenShotDir');
+        return ReturnValue;
+    }
+    async SetExtension(InPath, InNewExtension) {
+        const { ReturnValue } = await this.call('SetExtension', { InPath, InNewExtension });
+        return ReturnValue;
+    }
+    async SetProjectFilePath(NewGameProjectFilePath) {
+        await this.call('SetProjectFilePath', { NewGameProjectFilePath });
+    }
+    async ShaderWorkingDir() {
+        const { ReturnValue } = await this.call('ShaderWorkingDir');
+        return ReturnValue;
+    }
+    async ShouldSaveToUserDir() {
+        const { ReturnValue } = await this.call('ShouldSaveToUserDir');
+        return ReturnValue;
+    }
+    async SourceConfigDir() {
+        const { ReturnValue } = await this.call('SourceConfigDir');
+        return ReturnValue;
+    }
+    async Split(InPath, PathPart, FilenamePart, ExtensionPart) {
+        await this.call('Split', { InPath, PathPart, FilenamePart, ExtensionPart });
+    }
+    async ValidatePath(InPath, bDidSucceed) {
+        return await this.call('ValidatePath', { InPath, bDidSucceed });
+    }
+    async VideoCaptureDir() {
+        const { ReturnValue } = await this.call('VideoCaptureDir');
+        return ReturnValue;
     }
 }
 exports.UBlueprintPathsLibrary = UBlueprintPathsLibrary;

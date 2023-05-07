@@ -1,237 +1,154 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const uobject_1 = require("../uobject");
 class EditorAssetLibrary extends uobject_1.UObject {
     constructor() {
         super('/Script/EditorScriptingUtilities.Default__EditorAssetLibrary');
     }
-    CheckoutAsset(AssetToCheckout) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CheckoutAsset', { AssetToCheckout });
-            return ReturnValue;
-        });
+    async CheckoutAsset(AssetToCheckout) {
+        const { ReturnValue } = await this.call('CheckoutAsset', { AssetToCheckout });
+        return ReturnValue;
     }
-    CheckoutDirectory(DirectoryPath, bRecursive) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CheckoutDirectory', { DirectoryPath, bRecursive });
-            return ReturnValue;
-        });
+    async CheckoutDirectory(DirectoryPath, bRecursive) {
+        const { ReturnValue } = await this.call('CheckoutDirectory', { DirectoryPath, bRecursive });
+        return ReturnValue;
     }
-    CheckoutLoadedAsset(AssetToCheckout) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CheckoutLoadedAsset', { AssetToCheckout });
-            return ReturnValue;
-        });
+    async CheckoutLoadedAsset(AssetToCheckout) {
+        const { ReturnValue } = await this.call('CheckoutLoadedAsset', { AssetToCheckout });
+        return ReturnValue;
     }
-    CheckoutLoadedAssets(AssetsToCheckout) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('CheckoutLoadedAssets', { AssetsToCheckout });
-            return ReturnValue;
-        });
+    async CheckoutLoadedAssets(AssetsToCheckout) {
+        const { ReturnValue } = await this.call('CheckoutLoadedAssets', { AssetsToCheckout });
+        return ReturnValue;
     }
-    ConsolidateAssets(AssetToConsolidateTo, AssetsToConsolidate) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ConsolidateAssets', { AssetToConsolidateTo, AssetsToConsolidate });
-            return ReturnValue;
-        });
+    async ConsolidateAssets(AssetToConsolidateTo, AssetsToConsolidate) {
+        const { ReturnValue } = await this.call('ConsolidateAssets', { AssetToConsolidateTo, AssetsToConsolidate });
+        return ReturnValue;
     }
-    DeleteAsset(AssetPathToDelete) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DeleteAsset', { AssetPathToDelete });
-            return ReturnValue;
-        });
+    async DeleteAsset(AssetPathToDelete) {
+        const { ReturnValue } = await this.call('DeleteAsset', { AssetPathToDelete });
+        return ReturnValue;
     }
-    DeleteDirectory(DirectoryPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DeleteDirectory', { DirectoryPath });
-            return ReturnValue;
-        });
+    async DeleteDirectory(DirectoryPath) {
+        const { ReturnValue } = await this.call('DeleteDirectory', { DirectoryPath });
+        return ReturnValue;
     }
-    DeleteLoadedAsset(AssetToDelete) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DeleteLoadedAsset', { AssetToDelete });
-            return ReturnValue;
-        });
+    async DeleteLoadedAsset(AssetToDelete) {
+        const { ReturnValue } = await this.call('DeleteLoadedAsset', { AssetToDelete });
+        return ReturnValue;
     }
-    DeleteLoadedAssets(AssetsToDelete) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DeleteLoadedAssets', { AssetsToDelete });
-            return ReturnValue;
-        });
+    async DeleteLoadedAssets(AssetsToDelete) {
+        const { ReturnValue } = await this.call('DeleteLoadedAssets', { AssetsToDelete });
+        return ReturnValue;
     }
-    DoAssetsExist(AssetPaths) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DoAssetsExist', { AssetPaths });
-            return ReturnValue;
-        });
+    async DoAssetsExist(AssetPaths) {
+        const { ReturnValue } = await this.call('DoAssetsExist', { AssetPaths });
+        return ReturnValue;
     }
-    DoesAssetExist(AssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DoesAssetExist', { AssetPath });
-            return ReturnValue;
-        });
+    async DoesAssetExist(AssetPath) {
+        const { ReturnValue } = await this.call('DoesAssetExist', { AssetPath });
+        return ReturnValue;
     }
-    DoesDirectoryExist(DirectoryPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DoesDirectoryExist', { DirectoryPath });
-            return ReturnValue;
-        });
+    async DoesDirectoryExist(DirectoryPath) {
+        const { ReturnValue } = await this.call('DoesDirectoryExist', { DirectoryPath });
+        return ReturnValue;
     }
-    DoesDirectoryHaveAssets(DirectoryPath, bRecursive) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DoesDirectoryHaveAssets', { DirectoryPath, bRecursive });
-            return ReturnValue;
-        });
+    async DoesDirectoryHaveAssets(DirectoryPath, bRecursive) {
+        const { ReturnValue } = await this.call('DoesDirectoryHaveAssets', { DirectoryPath, bRecursive });
+        return ReturnValue;
     }
-    DuplicateAsset(SourceAssetPath, DestinationAssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath });
-            return ReturnValue;
-        });
+    async DuplicateAsset(SourceAssetPath, DestinationAssetPath) {
+        const { ReturnValue } = await this.call('DuplicateAsset', { SourceAssetPath, DestinationAssetPath });
+        return ReturnValue;
     }
-    DuplicateDirectory(SourceDirectoryPath, DestinationDirectoryPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DuplicateDirectory', { SourceDirectoryPath, DestinationDirectoryPath });
-            return ReturnValue;
-        });
+    async DuplicateDirectory(SourceDirectoryPath, DestinationDirectoryPath) {
+        const { ReturnValue } = await this.call('DuplicateDirectory', { SourceDirectoryPath, DestinationDirectoryPath });
+        return ReturnValue;
     }
-    DuplicateLoadedAsset(SourceAsset, DestinationAssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath });
-            return ReturnValue;
-        });
+    async DuplicateLoadedAsset(SourceAsset, DestinationAssetPath) {
+        const { ReturnValue } = await this.call('DuplicateLoadedAsset', { SourceAsset, DestinationAssetPath });
+        return ReturnValue;
     }
-    FindAssetData(AssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('FindAssetData', { AssetPath });
-            return ReturnValue;
-        });
+    async FindAssetData(AssetPath) {
+        const { ReturnValue } = await this.call('FindAssetData', { AssetPath });
+        return ReturnValue;
     }
-    FindPackageReferencersForAsset(AssetPath, bLoadAssetsToConfirm) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('FindPackageReferencersForAsset', { AssetPath, bLoadAssetsToConfirm });
-            return ReturnValue;
-        });
+    async FindPackageReferencersForAsset(AssetPath, bLoadAssetsToConfirm) {
+        const { ReturnValue } = await this.call('FindPackageReferencersForAsset', { AssetPath, bLoadAssetsToConfirm });
+        return ReturnValue;
     }
-    GetMetadataTag(Object, Tag) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetMetadataTag', { Object, Tag });
-            return ReturnValue;
-        });
+    async GetMetadataTag(Object, Tag) {
+        const { ReturnValue } = await this.call('GetMetadataTag', { Object, Tag });
+        return ReturnValue;
     }
-    GetMetadataTagValues(Object) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetMetadataTagValues', { Object });
-            return ReturnValue;
-        });
+    async GetMetadataTagValues(Object) {
+        const { ReturnValue } = await this.call('GetMetadataTagValues', { Object });
+        return ReturnValue;
     }
-    GetPathNameForLoadedAsset(LoadedAsset) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetPathNameForLoadedAsset', { LoadedAsset });
-            return ReturnValue;
-        });
+    async GetPathNameForLoadedAsset(LoadedAsset) {
+        const { ReturnValue } = await this.call('GetPathNameForLoadedAsset', { LoadedAsset });
+        return ReturnValue;
     }
-    GetTagValues(AssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('GetTagValues', { AssetPath });
-            return ReturnValue;
-        });
+    async GetTagValues(AssetPath) {
+        const { ReturnValue } = await this.call('GetTagValues', { AssetPath });
+        return ReturnValue;
     }
-    ListAssetByTagValue(TagName, TagValue) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ListAssetByTagValue', { TagName, TagValue });
-            return ReturnValue;
-        });
+    async ListAssetByTagValue(TagName, TagValue) {
+        const { ReturnValue } = await this.call('ListAssetByTagValue', { TagName, TagValue });
+        return ReturnValue;
     }
-    ListAssets(DirectoryPath, bRecursive, bIncludeFolder) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('ListAssets', { DirectoryPath, bRecursive, bIncludeFolder });
-            return ReturnValue;
-        });
+    async ListAssets(DirectoryPath, bRecursive, bIncludeFolder) {
+        const { ReturnValue } = await this.call('ListAssets', { DirectoryPath, bRecursive, bIncludeFolder });
+        return ReturnValue;
     }
-    LoadAsset(AssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('LoadAsset', { AssetPath });
-            return ReturnValue;
-        });
+    async LoadAsset(AssetPath) {
+        const { ReturnValue } = await this.call('LoadAsset', { AssetPath });
+        return ReturnValue;
     }
-    LoadBlueprintClass(AssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('LoadBlueprintClass', { AssetPath });
-            return ReturnValue;
-        });
+    async LoadBlueprintClass(AssetPath) {
+        const { ReturnValue } = await this.call('LoadBlueprintClass', { AssetPath });
+        return ReturnValue;
     }
-    MakeDirectory(DirectoryPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('MakeDirectory', { DirectoryPath });
-            return ReturnValue;
-        });
+    async MakeDirectory(DirectoryPath) {
+        const { ReturnValue } = await this.call('MakeDirectory', { DirectoryPath });
+        return ReturnValue;
     }
-    RemoveMetadataTag(Object, Tag) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield this.call('RemoveMetadataTag', { Object, Tag });
-        });
+    async RemoveMetadataTag(Object, Tag) {
+        await this.call('RemoveMetadataTag', { Object, Tag });
     }
-    RenameAsset(SourceAssetPath, DestinationAssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('RenameAsset', { SourceAssetPath, DestinationAssetPath });
-            return ReturnValue;
-        });
+    async RenameAsset(SourceAssetPath, DestinationAssetPath) {
+        const { ReturnValue } = await this.call('RenameAsset', { SourceAssetPath, DestinationAssetPath });
+        return ReturnValue;
     }
-    RenameDirectory(SourceDirectoryPath, DestinationDirectoryPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('RenameDirectory', { SourceDirectoryPath, DestinationDirectoryPath });
-            return ReturnValue;
-        });
+    async RenameDirectory(SourceDirectoryPath, DestinationDirectoryPath) {
+        const { ReturnValue } = await this.call('RenameDirectory', { SourceDirectoryPath, DestinationDirectoryPath });
+        return ReturnValue;
     }
-    RenameLoadedAsset(SourceAsset, DestinationAssetPath) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('RenameLoadedAsset', { SourceAsset, DestinationAssetPath });
-            return ReturnValue;
-        });
+    async RenameLoadedAsset(SourceAsset, DestinationAssetPath) {
+        const { ReturnValue } = await this.call('RenameLoadedAsset', { SourceAsset, DestinationAssetPath });
+        return ReturnValue;
     }
-    SaveAsset(AssetToSave, bOnlyIfIsDirty) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SaveAsset', { AssetToSave, bOnlyIfIsDirty });
-            return ReturnValue;
-        });
+    async SaveAsset(AssetToSave, bOnlyIfIsDirty) {
+        const { ReturnValue } = await this.call('SaveAsset', { AssetToSave, bOnlyIfIsDirty });
+        return ReturnValue;
     }
-    SaveDirectory(DirectoryPath, bOnlyIfIsDirty, bRecursive) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SaveDirectory', { DirectoryPath, bOnlyIfIsDirty, bRecursive });
-            return ReturnValue;
-        });
+    async SaveDirectory(DirectoryPath, bOnlyIfIsDirty, bRecursive) {
+        const { ReturnValue } = await this.call('SaveDirectory', { DirectoryPath, bOnlyIfIsDirty, bRecursive });
+        return ReturnValue;
     }
-    SaveLoadedAsset(AssetToSave, bOnlyIfIsDirty) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SaveLoadedAsset', { AssetToSave, bOnlyIfIsDirty });
-            return ReturnValue;
-        });
+    async SaveLoadedAsset(AssetToSave, bOnlyIfIsDirty) {
+        const { ReturnValue } = await this.call('SaveLoadedAsset', { AssetToSave, bOnlyIfIsDirty });
+        return ReturnValue;
     }
-    SaveLoadedAssets(AssetsToSave, bOnlyIfIsDirty) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { ReturnValue } = yield this.call('SaveLoadedAssets', { AssetsToSave, bOnlyIfIsDirty });
-            return ReturnValue;
-        });
+    async SaveLoadedAssets(AssetsToSave, bOnlyIfIsDirty) {
+        const { ReturnValue } = await this.call('SaveLoadedAssets', { AssetsToSave, bOnlyIfIsDirty });
+        return ReturnValue;
     }
-    SetMetadataTag(Object, Tag, Value) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield this.call('SetMetadataTag', { Object, Tag, Value });
-        });
+    async SetMetadataTag(Object, Tag, Value) {
+        await this.call('SetMetadataTag', { Object, Tag, Value });
     }
-    SyncBrowserToObjects(AssetPaths) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield this.call('SyncBrowserToObjects', { AssetPaths });
-        });
+    async SyncBrowserToObjects(AssetPaths) {
+        await this.call('SyncBrowserToObjects', { AssetPaths });
     }
 }
 exports.EditorAssetLibrary = EditorAssetLibrary;
