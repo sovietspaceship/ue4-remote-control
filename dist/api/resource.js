@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const UE4_SERVER_PORT = 8080;
 class Resource {
     async makeRequest(method, endpoint, body) {
         const options = {
@@ -10,11 +9,15 @@ class Resource {
             },
             body: JSON.stringify(this.omitUndefined(body)),
         };
-        const response = await fetch(`http://localhost:${UE4_SERVER_PORT}${endpoint}`, options);
+        const response = await fetch(`http://localhost:${this.getPort()}${endpoint}`, options);
         if (!response.ok) {
             throw new Error(`Request failed with status ${response.status}`);
         }
         return response.json();
+    }
+    getPort() {
+        const port = localStorage === null || localStorage === void 0 ? void 0 : localStorage.getItem('UE_SERVER_PORT');
+        return port ? parseInt(port, 10) : 8080;
     }
     omitUndefined(obj) {
         return Object.entries(obj).reduce((acc, [key, value]) => {

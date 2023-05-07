@@ -27,7 +27,7 @@ export class Resource {
   }
 
   getPort(): number {
-    const port = localStorage?.getItem('UE4_SERVER_PORT');
+    const port = localStorage?.getItem('UE_SERVER_PORT');
     return port ? parseInt(port, 10) : 8080;
   }
 
