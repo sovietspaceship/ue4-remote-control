@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const uobject_1 = require("../uobject");
 class GameplayStatics extends uobject_1.UObject {
     constructor() {
-        super('/Script/Editor.Default__GameplayStatics');
+        super('/Script/Default__GameplayStatics');
     }
     async ActivateReverbEffect(WorldContextObject, ReverbEffect, TagName, Priority, Volume, FadeTime) {
         await this.call('ActivateReverbEffect', { WorldContextObject, ReverbEffect, TagName, Priority, Volume, FadeTime });
