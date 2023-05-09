@@ -74,7 +74,7 @@ type SuggestProjectileVelocity_CustomArcReturn = {
 
 export class GameplayStatics extends UObject {
     constructor() {
-        super('/Script/Editor.Default__GameplayStatics')
+        super('/Script/Default__GameplayStatics')
     }
 
     async ActivateReverbEffect(WorldContextObject: UObject, ReverbEffect: UReverbEffect, TagName: FName, Priority: number, Volume: number, FadeTime: number): Promise<void> {
